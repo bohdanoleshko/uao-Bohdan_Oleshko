@@ -1,0 +1,10 @@
+.header_container{
+    width: 100%;
+    padding: 40px 120px;
+    background: #6954b4;
+}
+.header_title{
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}

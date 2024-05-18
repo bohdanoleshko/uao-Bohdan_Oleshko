@@ -1,0 +1,25 @@
+version: '3'
+services:
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    ports:
+      - "8080:8080"
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      MONGODB_URI: "mongodb://mongo:27017"  
+ 
+  mongo:
+    image: mongo:4.4.12
+    ports:
+      - "27017:27017"
